@@ -1,0 +1,120 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 40px;
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+
+.card {
+  margin-top: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Profile.tsx */
+.profile {
+  width: 320px;
+  margin: 0 auto;
+}
+.profile .description {
+  text-align: center;
+  padding: 20px;
+}
+.profile .avatar {
+  width: 120px;
+  border-radius: 50%;
+}
+.profile .name {
+  font-weight: bold;
+  margin: 10px 0;
+}
+.profile .tag,
+.profile .location {
+  color: #777;
+}
+.profile .stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #f9f9f9;
+  padding: 10px;
+  margin: 0;
+  list-style: none;
+}
+.profile .stats li {
+  text-align: center;
+}
+
+/* Statistics.tsx */
+.statistics {
+  width: 400px;
+}
+.statistics .title {
+  text-align: center;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.statistics .stat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.statistics .item {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  border-right: 1px solid #ddd;
+}
+.statistics .item:last-child {
+  border-right: none;
+}
+.statistics .label {
+  display: block;
+  font-weight: bold;
+}
+.statistics .percentage {
+  color: #3498db;
+}
+
+/* FriendList.tsx */
+.friend-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 300px;
+}
+.friend-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+.friend-item:last-child {
+  border-bottom: none;
+}
+.status {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.status.online {
+  background-color: green;
+}
+.status.offline {
+  background-color: red;
+}
+.friend-item .avatar {
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.friend-item .name {
+  font-weight: bold;
+}
