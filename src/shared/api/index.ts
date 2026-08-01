@@ -1,0 +1,1 @@
+export { tmdbApi } from "./tmdbClient";
