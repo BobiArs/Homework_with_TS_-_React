@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+}
+
+/* Стилі для темного тла body */
+body.dark {
+  background-color: #1e272e;
+}
+
+.game {
+  text-align: center;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 10px;
+}
+
+/* Стилі для темного заголовку */
+.title-dark {
+  background: linear-gradient(45deg, #f1c40f, #e67e22) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.cell {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.x-mark {
+  color: #e74c3c;
+  text-shadow: 2px 2px 4px rgba(231, 76, 60, 0.2);
+}
+
+.o-mark {
+  color: #3498db;
+  text-shadow: 2px 2px 4px rgba(52, 152, 219, 0.2);
+}
+
+.cell:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.05);
+}
+
+.cell.winner {
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  color: white !important;
+  animation: winPulse 1.5s ease-in-out infinite;
+  border: 2px solid #27ae60;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2) !important;
+  transform: scale(1.05);
+}
+
+.cell.winner:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #27ae60, #2ecc71);
+}
+
+/* Стилі для темної клітинки */
+.cell.dark-cell {
+  background: #2f3640;
+  color: #f5f6fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cell.dark-cell:hover {
+  background-color: #353b48;
+}
+
+.turn {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: #34495e;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.turn span.x-mark {
+  color: #e74c3c;
+  font-weight: 700;
+}
+.turn span.o-mark {
+  color: #007bff;
+  font-weight: 700;
+}
+
+.turn:hover {
+  transform: translateY(-2px);
+}
+
+.reset {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset:hover {
+  background-color: #0056b3;
+}
+
+@keyframes winPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+  }
+}
+
+.timer {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+/* Стилі для темного інфо-блоку */
+.turn.dark-turn {
+  background-color: #2f3640;
+  color: #f5f6fa;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Стилі для таймера в темній темі */
+.game.dark .timer {
+  color: #f5f6fa;
+}
+
+.theme-toggle-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.game.dark .theme-toggle-btn {
+  background-color: #2f3640;
+  color: #fff;
+  border-color: #444;
+}
