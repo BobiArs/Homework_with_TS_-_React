@@ -11,7 +11,6 @@ export function TimerComponent() {
   const { winner, isDraw, cells } = useGameContext();
   const [seconds, setSeconds] = useState(0);
 
-  // Reset timer if board is cleared (all cells are null)
   const isInitialBoard = cells.every((cell) => cell === null);
   useEffect(() => {
     if (isInitialBoard) {
